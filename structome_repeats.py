@@ -1,4 +1,4 @@
-import sys, linecache, string
+import sys, linecache
 def main(Xmap_file, Qcmap_file, Cutoff):
 	Q_set = []
 	Q_prev = 0
