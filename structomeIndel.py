@@ -55,7 +55,7 @@ def main(Xmap_file, Rcmap_file, Qcmap_file, Cutoff, Output_file):
 
 if __name__ == "__main__":
         if len(sys.argv) <6:
-                sys.exit("usage: BioNano_Indel.py(Xmap_file, Rcmap_file, Qcmap_file, Cutoff, Output_file) \n\
+                sys.exit("usage: structomeIndel.py(Xmap_file, Rcmap_file, Qcmap_file, Cutoff, Output_file) \n\
 			Xmap_file: <run#>.xmap \n\
 			Rcmap_file: <run#>_r.cmap \n\
 			Qcmap_file: <run#>_q.cmap \n\
