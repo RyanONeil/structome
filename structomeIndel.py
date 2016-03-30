@@ -1,4 +1,4 @@
-import sys, linecache, string
+import sys, linecache
 def main(Xmap_file, Rcmap_file, Qcmap_file, Cutoff, Output_file):
 	with open(Xmap_file,'r') as Xmap, open(Output_file,'w') as output: 
 		output.write("Ref_ID\tContig_ID\tRef_Nick_ID\tContig_Nick_ID\tRef_Nick_prev_pos\tRef_Nick_pos\tContig_Nick_prev_pos\tContig_Nick_pos\tReff_diff\tContig_diff\tDiff_diff\tFLAG\tCoverage\n")
