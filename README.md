@@ -3,11 +3,14 @@ Toolbox development for structural variations within Irys data retrieved from th
 
 # Input Files
 In order to run most scripts you will need the following three files:
-1. <sample>.xmap - The overall mapping flie with the columns: 
+
+1. sample.xmap - The overall mapping flie with the columns: 
 [XmapEntryID, QryContigID, RefContigID, QryStartPos, QryEndPos, RefStartPos, RefEndPos, Orientation, Confidence, HitEnum, QryLen, RefLen, LabelChannel, Alignment]
-2. <sample>_r.cmap - The reference mapping file with the columns: 
+
+2. sample_r.cmap - The reference mapping file with the columns: 
 [CMapId, ContigLength, NumSites, SiteID, LabelChannel, Position, StdDev, Coverage, Occurrence]
-3. <sample>_q.cmap - The contig mapping file with the columnns: 
+
+3. sample_q.cmap - The contig mapping file with the columnns: 
 [CMapId, ContigLength, NumSites, SiteID, LabelChannel, Position, StdDev, Coverage, Occurrence, GmeanSNR, lnSNRsd, SNR]
 
 # Usage
