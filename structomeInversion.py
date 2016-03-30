@@ -28,7 +28,7 @@ def main(Xmap_file, Output_file):
 					X6 = Xfield[6]
 if __name__ == "__main__":
         if len(sys.argv) <3:
-                sys.exit("usage: BioNano_Inversion.py(Xmap_file, Output_file) \n\
+                sys.exit("usage: structomeInversion.py(Xmap_file, Output_file) \n\
 			Xmap_file: <run#>.xmap \n\
 			Output_file: name of file to store output ")
 	main(sys.argv[1],sys.argv[2])
