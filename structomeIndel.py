@@ -1,6 +1,7 @@
 import sys, linecache
 def main(Xmap_file, Rcmap_file, Qcmap_file, Cutoff, Output_file):
-	with open(Xmap_file,'r') as Xmap, open(Output_file,'w') as output: 
+	Output_file = Output_file.rsplit(".", 1 )[0]
+	with open(Xmap_file,'r') as Xmap, open(Output_file+".txt",'w') as output, open(Output_file+".bed",'w') as bed_output: 
 		output.write("Ref_ID\tContig_ID\tRef_Nick_ID\tContig_Nick_ID\tRef_Nick_prev_pos\tRef_Nick_pos\tContig_Nick_prev_pos\tContig_Nick_pos\tReff_diff\tContig_diff\tDiff_diff\tFLAG\tCoverage\n")
 		for Xline in Xmap:
 			first_match = True
@@ -45,8 +46,12 @@ def main(Xmap_file, Rcmap_file, Qcmap_file, Cutoff, Output_file):
 						Q_diff = abs(int(Qpos) - int(Q_prev))
 						Diff_diff = abs(R_diff-Q_diff)
 						if Diff_diff >= int(Cutoff):
-							if R_diff - Q_diff > 0: flag = 'DEL'
-							if R_diff - Q_diff < 0: flag = 'IN'
+							if R_diff - Q_diff > 0: 
+								flag = 'DEL'
+								bed_output.write(Ref_ID+"\t"+R_prev+"\t"+Rpos+"\n")
+							if R_diff - Q_diff < 0: 
+								flag = 'IN'
+								bed_output.write(Ref_ID+"\t"+R_prev+"\t"+Rpos+"\n")
 							if R_diff - Q_diff == 0: flag = 'MATCH'
 						else: flag = 'MATCH'
 						output.write(Ref_ID+"\t"+Contig_ID+"\t"+Rmatch+"\t"+Qmatch+"\t"+R_prev+"\t"+Rpos+"\t"+Q_prev+"\t"+Qpos+"\t"+str(abs(R_diff))+"\t"+str(Q_diff)+"\t"+str(Diff_diff)+"\t"+flag+"\t"+Coverage+"\n")
