@@ -31,3 +31,20 @@ Command Line
 structome_repeats.py Xmap_file Qcmap_file Cutoff 
 Within Python
 structome_repeats.py(Xmap_file, Qcmap_file, Cutoff)
+
+# Outputs
+Here is a list of all the outputs by column:
+
+Ref_ID = RefContigID obtained from the Xmap file
+Contig_ID = QryContigID obtained from the Xmap file
+Ref_Nick_ID = ID number for Rcmap file
+Contig_Nick_ID = ID number for Qcmap file
+Ref_Nick_prev_pos = Rcmap start position
+Ref_Nick_pos = Rcmap end position
+Contig_Nick_prev_pos = Qcmap start position
+Contig_Nick_pos = Qcmap end position
+Reff_diff = Length of Rcmap
+Contig_diff = Length of Qcmap
+Diff_diff = Difference between Rcmap and Qcmap
+FLAG = Label of insertion or deletion
+Coverage = Read coverage from the Qcmap file
