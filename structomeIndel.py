@@ -5,7 +5,7 @@ def main(Xmap_file, Rcmap_file, Qcmap_file, Cutoff, Output_file):
 		output.write("Ref_ID\tContig_ID\tRef_Nick_ID\tContig_Nick_ID\tRef_Nick_prev_pos\tRef_Nick_pos\tContig_Nick_prev_pos\tContig_Nick_pos\tReff_diff\tContig_diff\tDiff_diff\tFLAG\tCoverage\n")
 		for Xline in Xmap:
 			first_match = True
-			Xline = Xline.rstrip('\n')
+			Xline = Xline.rstrip('\n').rstrip('\r')
 			Xfield = Xline.split('\t')
 			Xmatch = Xfield[-1].strip('(').rstrip(')').split(')(')
 			if len(Xmatch) > 1:
